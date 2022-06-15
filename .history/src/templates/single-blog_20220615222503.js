@@ -5,7 +5,6 @@ const SingleBlog = props => {
   return (
     <div>
       <h1>記事ページ</h1>
-      {console.log(props)}
     </div>
   )
 }

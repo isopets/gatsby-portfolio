@@ -3,9 +3,8 @@ import { graphql } from "gatsby"
 
 const SingleBlog = props => {
   return (
-    <div>
+    <div> {" "}
       <h1>記事ページ</h1>
-      {console.log(props)}
     </div>
   )
 }

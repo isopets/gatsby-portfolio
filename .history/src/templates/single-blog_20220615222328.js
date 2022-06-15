@@ -1,18 +1,12 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 
-const SingleBlog = props => {
-  return (
-    <div>
-      <h1>記事ページ</h1>
-      {console.log(props)}
-    </div>
-  )
+const SingleBlog = () => {
+  return <h1>記事ページ</h1>
 }
 
 export default SingleBlog
-export const query = graphql`
-  query SingleBlogQuery {
+export const query = graphql`query SingleBlogQuery {
     markdownRemark {
       frontmatter {
         excerpt
@@ -23,5 +17,4 @@ export const query = graphql`
       }
       html
     }
-  }
-`
+  }`

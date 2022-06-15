@@ -18,18 +18,18 @@ exports.createPages = async({ graphql, actions }) => {
     const { createPage } = actions
 
     const result = await graphql(`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
+        query {
+            allMarkdownRemark {
+                edges {
+                    node {
+                        fields {
+                            slug
+                        }
+                    }
+                }
             }
-          }
         }
-      }
-    }
-  `)
+    `)
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
