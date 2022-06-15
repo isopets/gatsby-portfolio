@@ -47,12 +47,12 @@ export const query = graphql`
             excerpt
             id
             image {
-              childImageSharp {
+              childrenImageSharp {
                 gatsbyImageData(
-                  quality: 90
-                  formats: [AUTO, WEBP, AVIF]
-                  placeholder: BLURRED
-                )
+    quality: 90
+    formats: [AUTO, WEBP, AVIF], 
+    placeholder: BLURRED,
+)
               }
             }
             title

@@ -9,7 +9,7 @@ import NextLogo from "../images/next.svg"
 
 const Index = () => {
   return (
-    <Layout>
+    <layout>
       <div>
         <StaticImage
           src="../images/index-hero.jpg"
@@ -83,7 +83,7 @@ const Index = () => {
           <Link to="/contact"> Make It Happen! </Link>
         </div>
       </div>
-    </Layout>
+    </layout>
   )
 }
 

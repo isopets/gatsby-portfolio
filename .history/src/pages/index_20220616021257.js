@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
 import JSLogo from "../images/javascript.svg"
 import ReactLogo from "../images/react.svg"
 import GatsbyLogo from "../images/gatsby.svg"
@@ -9,7 +8,7 @@ import NextLogo from "../images/next.svg"
 
 const Index = () => {
   return (
-    <Layout>
+    <>
       <div>
         <StaticImage
           src="../images/index-hero.jpg"
@@ -83,7 +82,7 @@ const Index = () => {
           <Link to="/contact"> Make It Happen! </Link>
         </div>
       </div>
-    </Layout>
+    </>
   )
 }
 

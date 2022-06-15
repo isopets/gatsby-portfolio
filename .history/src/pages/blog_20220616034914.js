@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image" // 追加
 
 const Blog = props => {
   return (
@@ -23,7 +23,8 @@ const Blog = props => {
                     .gatsbyImageData
                 }
                 alt="card-image"
-              />
+              />{" "}
+              // 追加
             </div>
           ))}
         </div>
@@ -47,11 +48,11 @@ export const query = graphql`
             excerpt
             id
             image {
-              childImageSharp {
+              childrenImageSharp {
                 gatsbyImageData(
-                  quality: 90
-                  formats: [AUTO, WEBP, AVIF]
                   placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  quality: 90
                 )
               }
             }
