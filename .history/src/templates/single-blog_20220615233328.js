@@ -4,11 +4,8 @@ import { graphql } from "gatsby"
 const SingleBlog = props => {
   return (
     <>
-      <h1>{props.data.markdownRemark.frontmatter.title}</h1>
-      <p>{props.data.markdownRemark.frontmatter.date}</p>
-      <div
-        dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-      />
+      <h1>記事ページ</h1>
+      {console.log(props)}
     </>
   )
 }
@@ -17,11 +14,12 @@ export default SingleBlog
 
 export const query = graphql`
   query SingleBlogQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    markdownRemark {
       frontmatter {
         date
         excerpt
         id
+        image
         title
       }
       html

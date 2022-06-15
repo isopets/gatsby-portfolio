@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 
@@ -22,7 +23,7 @@ export default Blog
 
 export const query = graphql`
   query BlogQuery {
-    allMarkdownRemark(sort: { fields: frontmatter___id, order: DESC }) {
+    allMarkdownRemark {
       edges {
         node {
           fields {
@@ -32,6 +33,7 @@ export const query = graphql`
             date
             excerpt
             id
+            image
             title
           }
         }
