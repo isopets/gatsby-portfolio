@@ -22,7 +22,6 @@ const SingleBlog = ({ data, pageContext }) => {
           <p>{date}</p>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <PrevNext pageContext={pageContext} />
       </div>
     </Layout>
   )

@@ -1,9 +1,9 @@
 module.exports = {
     siteMetadata: {
-        defaultTitle: `Abe Hiroki Portfolio`,
-        defaultDescription: `JavaScriptを専門とするAbe Hirokiのポートフォリオサイトです。`,
-        defaultImage: "src/image/social-card.png",
-        siteUrl: "https://main--splendid-cat-4076e2.netlify.app/",
+        title: `Gatsby Default Starter`,
+        description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+        author: `@gatsbyjs`,
+        siteUrl: `https://main--splendid-cat-4076e2.netlify.app/`,
     },
     plugins: [
         `gatsby-plugin-sass`,
@@ -24,17 +24,6 @@ module.exports = {
                 path: `${__dirname}/src/data`,
             },
         },
-        {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [{
-                    resolve: `gatsby-remark-images`,
-                    options: {
-                        maxWidth: 800,
-                    },
-                }, ],
-            },
-        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -42,7 +31,7 @@ module.exports = {
             options: {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
-                start_url: `/`,
+                start_url: `https://main--splendid-cat-4076e2.netlify.app/`,
                 background_color: `#663399`,
                 // This will impact how browsers show your PWA/website
                 // https://css-tricks.com/meta-theme-color-and-trickery/

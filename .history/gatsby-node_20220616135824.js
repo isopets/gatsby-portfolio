@@ -19,7 +19,7 @@ exports.createPages = async({ graphql, actions }) => {
 
     const result = await graphql(`
     query {
-      allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___id] }) {
+      allMarkdownRemark {
         edges {
           node {
             fields {
@@ -55,21 +55,6 @@ exports.createPages = async({ graphql, actions }) => {
                 slug: node.fields.slug,
                 next,
                 previous,
-            },
-        })
-    })
-    const blogs = result.data.allMarkdownRemark.edges
-    const blogsPerPage = 5
-    const numberPages = Math.ceil(blogs.length / blogsPerPage)
-    Array.from({ length: numberPages }).forEach((_, i) => {
-        createPage({
-            path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-            component: path.resolve(`./src/templates/blog.js`),
-            context: {
-                limit: blogsPerPage,
-                skip: i * blogsPerPage,
-                numberPages,
-                currentPage: i + 1,
             },
         })
     })

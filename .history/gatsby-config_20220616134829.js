@@ -3,7 +3,7 @@ module.exports = {
         defaultTitle: `Abe Hiroki Portfolio`,
         defaultDescription: `JavaScriptを専門とするAbe Hirokiのポートフォリオサイトです。`,
         defaultImage: "src/image/social-card.png",
-        siteUrl: "https://main--splendid-cat-4076e2.netlify.app/",
+        siteUrl: "https://gatsbybook-portfolio-site.netlify.app",
     },
     plugins: [
         `gatsby-plugin-sass`,
@@ -24,17 +24,6 @@ module.exports = {
                 path: `${__dirname}/src/data`,
             },
         },
-        {
-            resolve: `gatsby-transformer-remark`,
-            options: {
-                plugins: [{
-                    resolve: `gatsby-remark-images`,
-                    options: {
-                        maxWidth: 800,
-                    },
-                }, ],
-            },
-        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         {
@@ -42,7 +31,7 @@ module.exports = {
             options: {
                 name: `gatsby-starter-default`,
                 short_name: `starter`,
-                start_url: `/`,
+                start_url: ``,
                 background_color: `#663399`,
                 // This will impact how browsers show your PWA/website
                 // https://css-tricks.com/meta-theme-color-and-trickery/

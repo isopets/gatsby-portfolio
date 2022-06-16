@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import * as style from "../styles/singleBlog.module.scss"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import PrevNext from "../components/prevNext"
 
 const SingleBlog = ({ data, pageContext }) => {
   const { title, date, excerpt, image } = data.markdownRemark.frontmatter
@@ -22,7 +21,6 @@ const SingleBlog = ({ data, pageContext }) => {
           <p>{date}</p>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
-        <PrevNext pageContext={pageContext} />
       </div>
     </Layout>
   )
