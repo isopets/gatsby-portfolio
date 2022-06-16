@@ -5,11 +5,11 @@ import "../styles/all.scss"
 
 const Layout = props => {
   return (
-    <>
+    <Layout>
       <Header />
       <main>{props.children}</main>
       <Footer />
-    </>
+    </Layout>
   )
 }
 

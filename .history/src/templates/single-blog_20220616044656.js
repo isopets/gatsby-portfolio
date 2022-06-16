@@ -7,7 +7,7 @@ import * as style from "../styles/singleBlog.module.scss"
 const SingleBlog = props => {
   return (
     <Layout>
-      <div className={style.hero}>
+      <div>
         <GatsbyImage
           image={
             props.data.markdownRemark.frontmatter.image.childImageSharp
@@ -16,8 +16,8 @@ const SingleBlog = props => {
           alt="blog-image"
         />
       </div>
-      <div className={style.wrapper}>
-        <div className={style.container}>
+      <div>
+        <div>
           <h1>{props.data.markdownRemark.frontmatter.title}</h1>
           <p>{props.data.markdownRemark.frontmatter.date}</p>
           <div
@@ -38,17 +38,17 @@ export const query = graphql`
         date
         excerpt
         id
-        title
         image {
           childImageSharp {
             gatsbyImageData(
-              placeholder: BLURRED
               formats: [AUTO, WEBP, AVIF]
+              placeholder: BLURRED
               quality: 90
               width: 1000
             )
           }
         }
+        title
       }
       html
     }

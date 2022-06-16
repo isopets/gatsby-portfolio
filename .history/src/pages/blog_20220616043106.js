@@ -2,18 +2,17 @@ import * as React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import * as style from "../styles/blog.module.scss"
 
 const Blog = props => {
   return (
     <Layout>
-      <div className={style.wrapper}>
-        <div className={style.container}>
+      <div>
+        <div>
           <h1>Blog</h1>
           <p>エンジニアの日常生活をお届けします</p>
           {props.data.allMarkdownRemark.edges.map((singleBlog, index) => (
-            <div className={style.blogCard} key={index}>
-              <div className={style.textContainer}>
+            <div key={index}>
+              <div>
                 <h3>{singleBlog.node.frontmatter.title}</h3>
                 <p>{singleBlog.node.frontmatter.excerpt}</p>
                 <p>{singleBlog.node.frontmatter.date}</p>
@@ -25,7 +24,6 @@ const Blog = props => {
                     .gatsbyImageData
                 }
                 alt="card-image"
-                className={style.cardImg}
               />
             </div>
           ))}
@@ -42,23 +40,23 @@ export const query = graphql`
     allMarkdownRemark(sort: { fields: frontmatter___id, order: DESC }) {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             date
             excerpt
             id
-            title
             image {
               childImageSharp {
                 gatsbyImageData(
-                  placeholder: BLURRED
-                  formats: [AUTO, WEBP, AVIF]
                   quality: 90
+                  formats: [AUTO, WEBP, AVIF]
+                  placeholder: BLURRED
                 )
               }
             }
-          }
-          fields {
-            slug
+            title
           }
         }
       }
