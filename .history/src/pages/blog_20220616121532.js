@@ -19,26 +19,25 @@ const Blog = ({ data }) => {
             const { slug } = singleBlog.node.fields
             const img = getImage(image.childImageSharp.gatsbyImageData)
             return (
-              <div className={style.blogCard} key={index}>
-                <div className={style.textContainer}>
-                  <h3>{singleBlog.node.frontmatter.title}</h3>
-                  <p>{singleBlog.node.frontmatter.excerpt}</p>
-                  <p>{singleBlog.node.frontmatter.date}</p>
-                  <Link to={"/blog${singleBlog.node.fields.slug}"}>
-                    Read More
-                  </Link>
-                </div>
-                <GatsbyImage
-                  image={
-                    singleBlog.node.frontmatter.image.childImageSharp
-                      .gatsbyImageData
-                  }
-                  alt="card-image"
-                  className={style.cardImg}
-                />
+            <div className={style.blogCard} key={index}>
+              <div className={style.textContainer}>
+                <h3>{singleBlog.node.frontmatter.title}</h3>
+                <p>{singleBlog.node.frontmatter.excerpt}</p>
+                <p>{singleBlog.node.frontmatter.date}</p>
+                <Link to={"/blog${singleBlog.node.fields.slug}"}>
+                  Read More
+                </Link>
               </div>
-            )
-          })}
+              <GatsbyImage
+                image={
+                  singleBlog.node.frontmatter.image.childImageSharp
+                    .gatsbyImageData
+                }
+                alt="card-image"
+                className={style.cardImg}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </Layout>

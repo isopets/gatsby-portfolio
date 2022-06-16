@@ -12,10 +12,7 @@ import Seo from "../components/seo"
 const Index = () => {
   return (
     <Layout>
-      <Seo
-        title="Abe Hiroki"
-        description="Abe Hirokiのポートフォリオサイトです"
-      />
+      
       <div className={style.hero}>
         <StaticImage
           src="../images/index-hero.jpg"

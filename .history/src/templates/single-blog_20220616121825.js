@@ -12,15 +12,26 @@ const SingleBlog = ({ data }) => {
   const img = getImage(image.childImageSharp.gatsbyImageData)
   return (
     <Layout>
-      <Seo title={title} description={excerpt} />
+      <Seo
+        title={.title}
+        description={props.data.markdownRemark.frontmatter.excerpt}
+      />
       <div className={style.hero}>
-        <GatsbyImage image={img} alt="blog-image" />
+        <GatsbyImage
+          image={
+            props.data.markdownRemark.frontmatter.image.childImageSharp
+              .gatsbyImageData
+          }
+          alt="blog-image"
+        />
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <h1>{title}</h1>
-          <p>{date}</p>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+          <p>{props.data.markdownRemark.frontmatter.date}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+          />
         </div>
       </div>
     </Layout>

@@ -6,7 +6,6 @@ import Seo from "../components/seo"
 const Contact = () => {
   return (
     <Layout>
-      <Seo title="コンタクト" description="これはコンタクトページです" />
       <div className={style.wrapper}>
         <div className={style.container}>
           <h1>Contact</h1>

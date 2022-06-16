@@ -20,7 +20,9 @@ const SingleBlog = ({ data }) => {
         <div className={style.container}>
           <h1>{title}</h1>
           <p>{date}</p>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
         </div>
       </div>
     </Layout>

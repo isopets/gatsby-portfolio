@@ -6,21 +6,29 @@ import * as style from "../styles/singleBlog.module.scss"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const SingleBlog = ({ data }) => {
-  const { title, date, excerpt, image } = data.markdownRemark.frontmatter // 追加
-  const { html } = data.markdownRemark // 追加
-  const img = getImage(image.childImageSharp.gatsbyImageData)
+const SingleBlog =  => {
   return (
     <Layout>
-      <Seo title={title} description={excerpt} />
+      <Seo
+        title={props.data.markdownRemark.frontmatter.title}
+        description={props.data.markdownRemark.frontmatter.excerpt}
+      />
       <div className={style.hero}>
-        <GatsbyImage image={img} alt="blog-image" />
+        <GatsbyImage
+          image={
+            props.data.markdownRemark.frontmatter.image.childImageSharp
+              .gatsbyImageData
+          }
+          alt="blog-image"
+        />
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <h1>{title}</h1>
-          <p>{date}</p>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+          <p>{props.data.markdownRemark.frontmatter.date}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+          />
         </div>
       </div>
     </Layout>

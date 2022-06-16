@@ -18,9 +18,11 @@ const SingleBlog = ({ data }) => {
       </div>
       <div className={style.wrapper}>
         <div className={style.container}>
-          <h1>{title}</h1>
-          <p>{date}</p>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <h1>{props.data.markdownRemark.frontmatter.title}</h1>
+          <p>{props.data.markdownRemark.frontmatter.date}</p>
+          <div
+            dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
+          />
         </div>
       </div>
     </Layout>
