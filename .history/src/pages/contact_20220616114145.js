@@ -13,7 +13,7 @@ const Contact = () => {
             method="post"
             netlify-honeypot="bot-field"
             data-netlify="true"
-            name="contact"
+            name="contact
             action="/success"
           >
             <input type="hidden" name="form-name" value="contact" />
