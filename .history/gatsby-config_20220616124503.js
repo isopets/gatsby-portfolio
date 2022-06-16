@@ -3,7 +3,7 @@ module.exports = {
         title: `Gatsby Default Starter`,
         description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
         author: `@gatsbyjs`,
-        siteUrl: `https://main--splendid-cat-4076e2.netlify.app/`,
+        siteUrl: `https://deploy-preview-2--splendid-cat-4076e2.netlify.app/`,
     },
     plugins: [
         `gatsby-plugin-sass`,
