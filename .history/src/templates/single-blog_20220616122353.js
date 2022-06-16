@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import * as style from "../styles/singleBlog.module.scss"
 import Seo from "../components/seo"
@@ -7,7 +8,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const SingleBlog = ({ data }) => {
   const { title, date, excerpt, image } = data.markdownRemark.frontmatter
-  const { html } = data.markdownRemark
+  const { html } = data.markdownRemark // 追加
   const img = getImage(image.childImageSharp.gatsbyImageData)
   return (
     <Layout>

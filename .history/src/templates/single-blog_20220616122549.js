@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
+
 import Layout from "../components/layout"
 import * as style from "../styles/singleBlog.module.scss"
 import Seo from "../components/seo"
